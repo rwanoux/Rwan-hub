@@ -1,0 +1,41 @@
+<header class="container-fluid">
+	<nav>
+
+		<a href="{{path('app_home')}}">
+			<h1>
+				<img
+					src="{{asset('img/avatar.webp')}}"
+					alt=""
+				>
+				Rwan Hub
+
+			</h1>
+		</a>
+
+		<div style="text-align: center">
+			<p>Un site où j'expérimente.</p>
+		</div>
+		<ul>
+			<li>
+				<label data-tooltip="darkmode">
+					<input
+						id="lightmode"
+						name="lightmode"
+						type="checkbox"
+						role="switch"
+					/>
+
+				</label>
+			</li>
+			<li><a
+					role="button"
+					class="secondary"
+					href="{{path('app_about')}}"
+				>about
+				</a>
+			</li>
+
+		</ul>
+	</nav>
+
+</header>

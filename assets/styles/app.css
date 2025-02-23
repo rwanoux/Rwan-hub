@@ -1,3 +1,228 @@
-body {
-    background-color: skyblue;
+:root
+{
+    --theme-transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body
+{
+    cursor: 🪄;
+}
+
+html[data-theme]
+{
+    transition: var(--theme-transition);
+}
+
+html[data-theme] *
+{
+    transition: var(--theme-transition);
+}
+
+h1,
+h2,
+h3
+{
+    font-family: "Quattrocento", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h4,
+h5,
+h6
+{
+    font-family: "Poppins", serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+p
+{
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+article
+{
+
+
+    p
+    {
+        padding: 3rem;
+    }
+}
+
+body>header
+{
+    box-shadow: 0 2rem 2rem rgba(255, 255, 255, 0.062);
+
+    img
+    {
+        height: 3rem;
+        border-radius: 50%;
+        filter: drop-shadow(0 0.5rem 1rem rgb(255, 255, 255));
+    }
+}
+
+body>footer
+{
+
+    box-shadow: 0 -2rem 2rem rgba(255, 255, 255, 0.062);
+
+    nav
+    {
+        width: 100%;
+
+        ul
+        {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid rgba(128, 128, 128, 0.295);
+            margin: 1rem;
+
+            img
+            {
+                border-radius: 50%;
+                filter: grayscale(1);
+                max-height: 3rem;
+                box-shadow: 0 0 0.5rem rgb(255, 255, 255);
+                transition: all 0.3s ease-in-out !important;
+
+                &:hover
+                {
+                    border-radius: 15%;
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}
+
+section.descriptif
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3
+    {
+        text-align: center;
+    }
+}
+
+div.overlay
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-color: #000;
+    pointer-events: none;
+    mix-blend-mode: hard-light;
+
+
+}
+
+.lighter
+{
+    --lighter-size: max(150vw, 150vh);
+    box-sizing: content-box;
+    mix-blend-mode: hard-light;
+    opacity: 0.45;
+    box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 0 0 30vw 3rem black inset;
+    position: fixed;
+    border-radius: 50%;
+    background-color: #ffffffd0;
+    width: var(--lighter-size);
+    height: var(--lighter-size);
+    z-index: +1;
+    transition: box-shadow 0.3s ease-in-out, transform 0.1s linear !important;
+
+    filter: blur(3rem);
+
+    &.clicked
+    {
+        transition: box-shadow 0.1s ease-in-out !important;
+        box-shadow: 0 0 200vw 30vw black, 0 0 20vw 3rem black, 0 0 100vw 80vw black inset;
+    }
+}
+
+
+section.hero
+{
+
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    div.hub div
+    {
+
+        min-height: 15rem;
+        background-size: 100% auto;
+        background-position: center;
+        transition: all 1s ease-in-out, filter 5s ease-in-out !important;
+        box-shadow: 0px 40px 200px rgba(0, 0, 0, 1)inset;
+        filter: grayscale(0.8);
+
+        &:hover
+        {
+            background-size: 140% auto;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 1)inset;
+            filter: grayscale(0);
+            transition: 0.4s ease-in-out !important;
+        }
+
+        a
+        {
+
+            display: block;
+            min-height: 100%;
+            min-width: 100%;
+            text-align: center;
+            align-content: center;
+
+
+
+        }
+
+
+
+        &.foundry
+        {
+            background-image: url("https://i0.wp.com/restenford.com/wp-content/uploads/2020/06/foundrylogo.png");
+        }
+
+        &.github
+        {
+            background-image: url("https://cdn.prod.website-files.com/669063260f1f9e9400934455/66b185a2069dd50a75c21e19_github-cover.jpg");
+        }
+
+        &.projects
+        {
+            background-image: url("../img/idea_18992682.gif");
+        }
+    }
+}
+
+p
+{
+    text-indent: 2rem;
+}
+
+p::first-letter
+{
+    text-transform: uppercase;
+}
+
+p::first-line
+{
+    padding-left: 1rem !important;
 }

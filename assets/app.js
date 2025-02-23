@@ -1,4 +1,6 @@
 import './bootstrap.js';
+import { MouseFollower } from './modules/MouseFollower.js';
+import { ThemeManager } from './modules/ThemeManager.js';
 /*
  * Welcome to your app's main JavaScript file!
  *
@@ -8,3 +10,13 @@ import './bootstrap.js';
 import './styles/app.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+
+// Initialisation
+window.addEventListener('load', () => {
+    //mouse follower animation to enlight the pages
+    new MouseFollower();
+    //light/dark mode
+    new ThemeManager();
+
+
+});
