@@ -4,47 +4,32 @@
 {% endblock %}
 
 {% block body %}
-<main class="container">
+<main class="container-fluid">
+	<canvas
+		data-controller="symfony--ux-chartjs--chart"
+		data-symfony--ux-chartjs--chart-view-value="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;,&quot;July&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;My First dataset&quot;,&quot;backgroundColor&quot;:&quot;rgb(255, 99, 132)&quot;,&quot;borderColor&quot;:&quot;rgb(255, 99, 132)&quot;,&quot;data&quot;:[0,10,5,2,20,30,45]}]},&quot;options&quot;:{&quot;scales&quot;:{&quot;y&quot;:{&quot;suggestedMin&quot;:0,&quot;suggestedMax&quot;:100}}}}"
+	></canvas>
 	<div class="main grid">
 
-		<section class="descriptif ">
-			<h2>Rwan est un gars qui fait ...</h2>
-			{% set strings = [
-			            '<b>💡 De la lumière 💡</b>',
-			            '🧑‍💻️ Du code 🧑‍💻️',
-			            '🎨 De la couleur 🎨',
-			            '🎲 Du jeu de rôle 🎲',
-			            '📚 De la lecture 📚',
-			        ] %}
-			<span
-				data-controller="symfony--ux-typed"
-				data-symfony--ux-typed-loop-value="true"
-				data-symfony--ux-typed-strings-value="{{ strings|json_encode|e('html_attr') }}"
-			> </span>
-			<a href="{{path('app_about')}}">mon parcour c'est ici</a>
-		</section>
 		<section class="hero">
-			<h3>Rwanoux Hub</h3>
+			<h2>Hub </h2>
 			<div class="grid hub">
-				<div class="foundry">
+				<div class="foundry ">
 					<a
+						data-placement="bottom"
 						href="https://rwanoux.freeboxos.fr/foundry"
-						data-tooltip="personnal Foundry Vtt server"
+						data-tooltip="Foundry Vtt server"
 					></a>
 				</div>
-				<div class="github">
+				<div class="nextcloud ">
 					<a
-						href="https://github.com/rwanoux"
-						data-tooltip="my github profile"
+						data-placement="bottom"
+						href="https://rwanoux.freeboxos.fr/nextcloud"
+						data-tooltip="Nextcloud server"
 					></a>
 
 				</div>
-				<div class="projects">
-					<a
-						href="{{path('app_projects')}}"
-						data-tooltip="pool of ridiculous projects"
-					></a>
-				</div>
+
 			</div>
 		</section>
 	</div>

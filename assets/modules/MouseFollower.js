@@ -57,7 +57,6 @@ export class MouseFollower {
     }
 
     handleClick(e) {
-
         if (this.lighter) {
             console.log('Handling link click');
             this.lighter.classList.add('clicked');
@@ -65,7 +64,8 @@ export class MouseFollower {
             // Retirer la classe après l'animation
             setTimeout(() => {
                 this.lighter.classList.remove('clicked');
-            }, 400);
+                console.log('Removed clicked class');
+            }, 200);
         }
     }
     animate() {

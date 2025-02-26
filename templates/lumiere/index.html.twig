@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LumiereController!{% endblock %}
+
+{% block body %}
+<main class="container-fluid">
+    <div class="main grid">
+
+        <section class="hero lumiere">
+            <div class="grid">
+                <div class="employeurs-reguliers">
+                    <h3>Employeurs réguliers</h3>
+                    <ul>
+                        <li> <a
+                                target="_blank"
+                                data-tooltip="le 6par4 - SMAC"
+                                href="https://www.6par4.com/"
+                            >
+                                <img
+                                    src="{{asset('img/logo-6par4.png')}}"
+                                    alt="6par4"
+                                >
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                data-tooltip="le Carré - scène nationnale"
+                                href="https://www.le-carre.org/"
+                            >
+                                <img
+                                    src="{{asset('img/le carre.jpg')}}"
+                                    alt="le carré"
+                                >
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                data-tooltip="LBS Production - prestataire technique"
+                                href="https://www.lbs-production.com/"
+                            >
+                                <img
+                                    src="{{asset('img/logo-LBS.jpg')}}"
+                                    alt="LBS Production"
+                                >
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="outils">
+                    <h3>Formation Professionnelle</h3>
+                    <ul class="consoles">
+                        <li data-tooltip="MA GrandMa2">
+                            <img
+                                src="{{asset('img/gm2.png')}}"
+                                alt="grandma 2"
+                            >
+                            <p>
+                                niveau avancé : juillet 2015 - LC Formation
+
+                            </p>
+                        </li>
+                        <li data-tooltip="MA GrandMa3">
+                            <img
+                                src="{{asset('img/gm3.jpg')}}"
+                                alt="grandma 3 "
+                            >
+                            <p>
+                                niveau avancé : mars 2025 - Oliverdy
+
+                            </p>
+                        </li>
+                        <li data-tooltip="ETC Eos">
+                            <img
+                                src="{{asset('img/eos.png')}}"
+                                alt="eos"
+                            >
+                            <p>
+                                niveau initial : janvier 2024 / niveau avancé janvier 2025 - Oliverdy
+
+                            </p>
+                        </li>
+                        <li data-tooltip="Chamsys MagicQ">
+                            <img
+                                src="{{asset('img/magicq.webp')}}"
+                                alt="magicq"
+                            >
+                            <p>
+                                niveau initial : novembre 2018 - LC Formation
+
+                            </p>
+                        </li>
+                        <li data-tooltip="Wysiwyg">
+                            <img
+                                src="{{asset('img/wyg.jpg')}}"
+                                alt="wysiwyg"
+                            >
+                            <p>
+                                niveau avancé : décembre 2016 - Oliverdy
+
+                            </p>
+                        </li>
+                        <li data-tooltip="réseau lumière">
+                            <img
+                                src="{{asset('img/reseau.jpeg')}}"
+                                alt="réseau lumière"
+                            >
+                            <p>
+                                novembre 2016 - Oliverdy
+
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

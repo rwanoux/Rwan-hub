@@ -4,36 +4,25 @@
 {% endblock %}
 
 {% block body %}
-<main class="container">
+<main class="container-fluid">
     <section>
-        {% set strings = [
-            "<p>Depuis 2006, j’évolue en tant qu’éclairagiste intermittent, sculptant la lumière pour donner vie aux
-            scènes et aux spectacles. Que ce soit sur grandMA2, grandMA3, Eos ou Chamsys, je façonne chaque faisceau avec
-            précision pour sublimer les atmosphères et renforcer les émotions. Mon métier est un équilibre subtil entre la technique et
-            l’artistique, une alchimie où l’ombre et la couleur s’entrelacent pour raconter une histoire.</p>
-            <p>Mais en 2020, la crise sanitaire a marqué un tournant décisif dans mon parcours. Privé de mon métier
-            par la mise à l’arrêt du spectacle vivant, j’ai choisi de transformer cette épreuve en opportunité. À 42 ans, j’ai
-            entrepris une reconversion audacieuse en décrochant mon premier diplôme post-bac : celui de développeur web et web
-            mobile. Une nouvelle aventure s’ouvrait, mais avec un fil conducteur inchangé : concevoir des univers et donner
-            vie aux idées, cette fois à travers le code.</p>
-            <p>Rôliste depuis les années 90, j’ai naturellement trouvé un terrain d’expérimentation dans le
-            développement de modules pour Foundry VTT. D’abord autodidacte en JavaScript pour répondre à mes propres besoins, j’ai
-            rapidement perfectionné mes compétences jusqu’à collaborer avec des éditeurs. J’ai ainsi eu l’opportunité d’implémenter des
-            modules officiels pour Rôle’n’Play et Torg, contribuant à enrichir l’expérience des joueurs sur cette plateforme.</p>
-            <p>Aujourd’hui, ma pratique du développement s’articule principalement autour de PHP et de Symfony pour
-            le back-end. J’apprécie particulièrement la rigueur et la puissance qu’offre ce framework pour bâtir des
-            architectures solides et évolutives. Entre les projecteurs et le code, je continue de tisser des connexions entre mes deux
-            passions, explorant sans cesse de nouvelles façons d’assembler la lumière et les données pour créer du sens.</p> "] %}
         <article>
             <header>
                 <h2>Mais qui c'est donc ?</h2>
             </header>
-            <div>
-                <span
-                    data-controller="symfony--ux-typed"
-                    data-symfony--ux-typed-strings-value="{{ strings|json_encode|e('html_attr') }}"
-                ></span>
-            </div>
+            "<p>Depuis 2006, je travaille comme éclairagiste intermittent dans le spectacle vivant. J'utilise les
+                consoles grandMA2, grandMA3, Eos et Chamsys pour créer des ambiances lumineuses adaptées à chaque
+                spectacle.</p>
+
+            <p>En 2020, pendant l'arrêt du secteur culturel, j'ai entrepris une formation de développeur web. À 42 ans,
+                j'ai obtenu mon diplôme et commencé une nouvelle carrière dans le développement.</p>
+
+            <p>Passionné de jeux de rôle depuis les années 90, j'ai développé des modules pour Foundry VTT. Cette
+                expérience m'a permis de créer des modules officiels, sous contrats avec l'éditeur des jeux Rôle'n'Play
+                et Torg.</p>
+
+            <p>Je me spécialise maintenant en développement PHP avec le framework Symfony. Cette double expertise en
+                éclairage et en code me permet d'apporter des solutions techniques dans ces deux domaines.</p>"
 
         </article>
     </section>

@@ -30,7 +30,7 @@
 		<!-- Pico.css -->
 		<link
 			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.lime.min.css"
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css"
 		>
 		{% endblock %}
 
@@ -43,16 +43,18 @@
 	</head>
 
 	<body>
+		{% include "_parts/flashes.html.twig" %}
+
 		{% include "_parts/header.html.twig" %}
-
-
 
 		{% block body %}{% endblock %}
 
 		{% include "_parts/footer.html.twig" %}
+
+
+		<!-- OVERLAY -->
 		<div class="overlay">
 			<div class="lighter"></div>
-
 		</div>
 
 

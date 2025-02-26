@@ -1,41 +1,65 @@
 <header class="container-fluid">
 	<nav>
-
-		<a href="{{path('app_home')}}">
-			<h1>
-				<img
-					src="{{asset('img/avatar.webp')}}"
-					alt=""
-				>
-				Rwan Hub
-
-			</h1>
-		</a>
-
-		<div style="text-align: center">
-			<p>Un site où j'expérimente.</p>
-		</div>
 		<ul>
 			<li>
-				<label data-tooltip="darkmode">
-					<input
-						id="lightmode"
-						name="lightmode"
-						type="checkbox"
-						role="switch"
-					/>
+				<a href="{{path('app_home')}}">
+					<img
+						src="{{asset('img/avatar.webp')}}"
+						alt=""
+					>
 
-				</label>
-			</li>
-			<li><a
-					role="button"
-					class="secondary"
-					href="{{path('app_about')}}"
-				>about
 				</a>
+			</li>
+
+		</ul>
+
+		<ul>
+			<li>
+				<a href="{{path('app_lumiere')}}"> <b>éclairagiste</b>
+				</a>
+			<li>
+				<a href="{{path('app_about')}}">présentation
+				</a>
+			</li>
+			<li>
+				<a href="{{path('app_projects')}}">projets
+				</a>
+			</li>
+
+
+			<li>
+				<div class="theme">
+					{{ ux_icon('tabler:moon-filled') }}
+					<label
+						data-tooltip="darkmode"
+						data-placement="bottom"
+					>
+						<input
+							id="lightmode"
+							name="lightmode"
+							type="checkbox"
+							role="switch"
+						/>
+
+					</label>
+					{{ ux_icon('tabler:sun') }}
+				</div>
+
 			</li>
 
 		</ul>
 	</nav>
 
+	<div style="text-align: center">
+		{% set strings = ['<b>💡 De la lumière 💡</b>','🧑‍💻️ Du code 🧑‍💻️','🎨 De la couleur 🎨','🎲🧝 Du jeu de rôle 🧝🎲','📚 De la lecture 📚'] %}
+		<h6>Rwanoux est un gars qui fait ...
+			<span
+				data-controller="symfony--ux-typed"
+				data-symfony--ux-typed-loop-value="true"
+				data-symfony--ux-typed-strings-value="{{ strings|json_encode|e('html_attr') }}"
+			></span>
+		</h6>
+
+
+	</div>
 </header>
