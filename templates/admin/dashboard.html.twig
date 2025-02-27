@@ -3,6 +3,11 @@
 {% block main %}
 <h1>Database overview</h1>
 <div class="container">
+    <style>
+        canvas {
+            background-color: aliceblue;
+        }
+    </style>
     {{ render_chart(chart) }}
 </div>
 {% endblock main %}

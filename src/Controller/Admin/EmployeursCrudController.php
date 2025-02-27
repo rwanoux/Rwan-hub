@@ -6,6 +6,7 @@ use App\Entity\Employeurs;
 use App\Field\VichImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
@@ -21,6 +22,9 @@ class EmployeursCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            ImageField::new('imageName', 'Image')
+                ->onlyOnIndex()
+                ->setBasePath('/images_upload'),
             TextField::new('name'),
             UrlField::new('website'),
             TextEditorField::new('description'),

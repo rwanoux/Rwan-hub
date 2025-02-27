@@ -29,9 +29,15 @@ return [
         'version' => '2.1.0',
     ],
     'chart.js' => [
-        'version' => '4.4.8',
+        'version' => '4.4.1',
     ],
     '@kurkle/color' => [
-        'version' => '0.3.4',
+        'version' => '0.3.2',
+    ],
+    'date-fns' => [
+        'version' => '4.1.0',
+    ],
+    'chartjs-adapter-date-fns' => [
+        'version' => '3.0.0',
     ],
 ];

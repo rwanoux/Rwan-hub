@@ -1,12 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LumiereController!{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script
+    src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+{% endblock %}
 
 {% block body %}
 <main class="container-fluid">
     <div class="main grid">
 
         <section class="hero lumiere">
+            {{ render_chart(chart, {'class': 'my-chart'}) }}
+
             <div class="grid">
                 <div class="employeurs-reguliers">
                     <h3>Employeurs réguliers</h3>
