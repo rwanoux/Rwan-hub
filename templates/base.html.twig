@@ -36,22 +36,26 @@
 		{% endblock %}
 
 		{% block javascripts %}
+
 		<!--Asset Mapper importmap-->
 		{% block importmap %}
 		{{ importmap('app') }}
 		{% endblock %}
+
 		{% endblock %}
 	</head>
 
-	<body>
+	<body data-axentix>
+
+		<div class="debugger"></div>
 		{% include "_parts/flashes.html.twig" %}
 
 		{% include "_parts/header.html.twig" %}
+		{% include "_parts/sidenav.html.twig" %}
 
 		{% block body %}{% endblock %}
 
 		{% include "_parts/footer.html.twig" %}
-
 
 		<!-- OVERLAY -->
 		<div class="overlay">

@@ -1,0 +1,58 @@
+<aside
+    class="sidenav glassmorphism"
+    id="main-sidenav"
+>
+    <div class="sidenav-header">
+        <button data-target="main-sidenav">{{ ux_icon('tabler:x') }}
+        </button>
+    </div>
+    <ul class="pages">
+        <li>
+            <a
+                href="{{path('app_home')}}"
+                class="
+                {{ 'app_home' == app.request.get('_route') ? "active" : ''}}
+                sidenav-link"
+            >
+                accueil</a>
+        </li>
+        <li>
+            <a
+                href="{{path('app_lumiere')}}"
+                class="
+                {{ 'app_home' == app.request.get('_route') ? "active" : ''}}
+                sidenav-link"
+            > <b>éclairagiste</b>
+            </a>
+        <li>
+            <a
+                href="{{path('app_about')}}"
+                class="
+                {{ 'app_home' == app.request.get('_route') ? "active" : ''}}
+                sidenav-link"
+            >présentation
+            </a>
+        </li>
+        <li>
+            <a
+                href="{{path('app_projects')}}"
+                class="
+                {{ 'app_home' == app.request.get('_route') ? "active" : ''}}
+                sidenav-link"
+            >projets
+            </a>
+        </li>
+        <li>
+            <a
+                href="{{path('app_hub')}}"
+                class="
+                {{ 'app_hub' == app.request.get('_route') ? "active" : ''}}
+                sidenav-link"
+            >mon hub
+            </a>
+        </li>
+    </ul>
+    <div class="sidenav-footer ">
+        This is a footer
+    </div>
+</aside>

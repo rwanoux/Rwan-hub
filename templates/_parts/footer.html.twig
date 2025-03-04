@@ -1,6 +1,26 @@
 <footer>
-    <nav class="links">
+    <nav class="links grix sm1 md3">
+        <ul>
+            {% if is_granted("ROLE_USER") %}
+            <li>
 
+                <span>log as {{ app.user.email }}</span>
+
+                <a
+                    data-tooltip="logout"
+                    href="{{path('app_logout')}}"
+                >{{ ux_icon('tabler:logout') }}</a>
+            </li>
+            {% else %}
+            <li>
+                <a
+                    data-tooltip="login"
+                    href="{{path('app_login')}}"
+                >{{ ux_icon('tabler:login') }}
+                </a>
+            </li>
+            {% endif %}
+        </ul>
         <ul>
             <li><span class="footer-label">Made with :</span>
             </li>
@@ -30,27 +50,7 @@
             </li>
 
         </ul>
-        <ul>
-            {% if is_granted("ROLE_USER") %}
-            <li>
 
-                <span>log as {{ app.user.email }}</span>
-
-                <a
-                    data-tooltip="logout"
-                    href="{{path('app_logout')}}"
-                >{{ ux_icon('tabler:logout') }}</a>
-            </li>
-            {% else %}
-            <li>
-                <a
-                    data-tooltip="login"
-                    href="{{path('app_login')}}"
-                >{{ ux_icon('tabler:login') }}
-                </a>
-            </li>
-            {% endif %}
-        </ul>
         <ul>
             <li> on the internet :</li>
             <li><a

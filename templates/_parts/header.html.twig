@@ -1,30 +1,16 @@
 <header class="container-fluid">
 	<nav>
+		<button data-target="main-sidenav">
+			{{ ux_icon('tabler:menu-2') }}
+		</button>
+		<a href="{{path('app_home')}}">
+			<img
+				src="{{asset('img/avatar.webp')}}"
+				alt=""
+			>
+
+		</a>
 		<ul>
-			<li>
-				<a href="{{path('app_home')}}">
-					<img
-						src="{{asset('img/avatar.webp')}}"
-						alt=""
-					>
-
-				</a>
-			</li>
-
-		</ul>
-
-		<ul>
-			<li>
-				<a href="{{path('app_lumiere')}}"> <b>éclairagiste</b>
-				</a>
-			<li>
-				<a href="{{path('app_about')}}">présentation
-				</a>
-			</li>
-			<li>
-				<a href="{{path('app_projects')}}">projets
-				</a>
-			</li>
 
 
 			<li>
@@ -48,6 +34,8 @@
 			</li>
 
 		</ul>
+
+
 	</nav>
 
 	<div style="text-align: center">

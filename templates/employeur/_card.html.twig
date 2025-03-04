@@ -1,0 +1,16 @@
+<article class="employeur-card"><a
+        href="{{employeur.website}}"
+        target="_blank"
+    >
+        <header>
+
+            {{employeur.name}}
+
+        </header>
+        {{employeur.description |raw}}
+        <div
+            class="image"
+            style="background-image:url('images_upload/{{employeur.imageName}}')"
+        ></div>
+    </a>
+</article>

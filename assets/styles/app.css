@@ -14,9 +14,14 @@ html[data-theme] *
     transition: var(--theme-transition);
 }
 
-html body svg
+html body
 {
-    min-width: 1.5rem !important;
+    overflow-x: clip;
+
+    svg
+    {
+        min-width: 1.5rem !important;
+    }
 }
 
 h1,
@@ -56,12 +61,17 @@ article
     }
 }
 
+body>header,
+body>main,
+body>footer
+{
+    max-width: 100%;
+
+}
+
 body>header
 {
-    position: fixed;
-    top: 0;
-    height: 7rem;
-    width: 100%;
+
     box-shadow: 0 2rem 2rem rgba(255, 255, 255, 0.233);
 
     img
@@ -83,24 +93,48 @@ body>header
         {
             min-width: 1rem
         }
-
-
-
-
     }
 
     details
     {
+
         summary
         {
-            color: #000
+            font-style: 2rem;
         }
 
-        ul
+        summary::after
         {
-            flex-direction: column;
+            opacity: 0;
         }
+
+
+
+        ul.pages
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            a
+            {
+                &:hover
+                {
+                    text-decoration: underline dotted;
+                }
+
+                &.active
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+
     }
+
+
+
 }
 
 .grid
@@ -108,24 +142,14 @@ body>header
     padding: 1.5rem
 }
 
-body>main
-{
-    position: fixed;
-    margin-top: 7rem;
-    height: calc(100% - 10rem);
-    overflow-y: auto;
-}
 
 body>footer
 {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+
 
     box-shadow: 0 -2rem 2rem rgba(255, 255, 255, 0.233);
     max-height: 3rem;
 
-    display: flex;
 
 
 
@@ -189,18 +213,21 @@ section.descriptif
 
 div.overlay
 {
+    overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100vw;
     height: 100%;
-    opacity: 0.85;
+    max-height: 100vh;
+    opacity: 0.65;
     background-image: url(../img/background.webp);
     background-size: cover;
     background-color: #000;
     pointer-events: none;
     mix-blend-mode: hard-light;
-    transform-origin: center;
+    box-sizing: border-box;
 
 
 }
@@ -316,9 +343,9 @@ div.overlay
 
 .lighter:not([aria-busy=true])
 {
-    animation: shadowmoove 1s infinite alternateease-in-out;
+    animation: shadowmoove 1s infinite alternate ease-in-out;
     background-attachment: initial !important;
-    animation-duration: 3s !important;
+    animation-duration: 12s !important;
     animation-delay: 0s !important;
     animation-iteration-count: infinite !important;
 }
@@ -326,7 +353,7 @@ div.overlay
 /* Déplacer ces styles en dehors de la media query et les mettre au niveau racine */
 .lighter
 {
-    animation: shadowmoove 1s infinite alternateease-in-out;
+    animation: shadowmoove 1s infinite alternate ease-in-out;
     --lighter-size: max(150vw, 150vh);
     box-sizing: content-box;
     mix-blend-mode: hard-light;
@@ -536,4 +563,61 @@ aside.flashes
             background-color: rgba(0, 0, 255, 0.445);
         }
     }
+}
+
+.chart-container
+{
+    --canvas-width: 100%;
+    --canvas-height: min(20rem, 50vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &>.canvas-container
+    {
+        height: var(--canvas-height);
+        width: var(--canvas-width);
+    }
+}
+
+.employeur-card
+{
+    position: relative;
+    min-width: 100%;
+
+    padding-right: 0;
+
+    transition: all 0.3s ease-in-out !important;
+
+    div.image
+    {
+        transition: all 0.3s ease-in-out !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.3;
+        pointer-events: none;
+        filter: grayscale(0.5);
+    }
+
+    &:hover
+    {
+        padding-right: 50%;
+
+        div.image
+        {
+            filter: grayscale(0);
+            width: 50%;
+            opacity: 1;
+            left: 50%
+        }
+    }
+
+
 }

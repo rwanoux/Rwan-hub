@@ -13,8 +13,18 @@
  */
 return [
     'app' => [
-        'path' => './assets/app.js',
-        'entrypoint' => true,
+        'path' => 'assets/app.js',
+        'entrypoint' => true
+    ],
+    'vis-timeline' => [
+        'version' => '7.7.3',
+    ],
+    'vis-data' => [
+        'version' => '7.1.9',
+    ],
+    'vis-timeline/dist/vis-timeline-graph2d.css' => [
+        'version' => '7.7.3',
+        'type' => 'css'
     ],
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
@@ -37,7 +47,23 @@ return [
     'date-fns' => [
         'version' => '4.1.0',
     ],
-    'chartjs-adapter-date-fns' => [
-        'version' => '3.0.0',
+    'axentix' => [
+        'version' => '2.4.1',
+    ],
+    'axentix/dist/axentix.min.css' => [
+        'version' => '2.4.1',
+        'type' => 'css',
+    ],
+    'vis-timeline' => [
+        'version' => '7.7.3',
+    ],
+    'moment' => [
+        'version' => '2.29.4',
+    ],
+    'vis-data/peer/esm/vis-data.js' => [
+        'version' => '7.1.9',
+    ],
+    'vis-data' => [
+        'version' => '7.1.9',
     ],
 ];
