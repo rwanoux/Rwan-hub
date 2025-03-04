@@ -1,4 +1,7 @@
 import './bootstrap.js';
+import './vendor/axentix/dist/axentix.min.css';
+import * as Axentix from './vendor/axentix/axentix.index.js';
+import { is_touch_device } from './modules/mobileTouch.js';
 import { MouseFollower } from './modules/MouseFollower.js';
 import { ThemeManager } from './modules/ThemeManager.js';
 /*
@@ -9,14 +12,29 @@ import { ThemeManager } from './modules/ThemeManager.js';
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
 
-// Initialisation
-window.addEventListener('load', () => {
-    //mouse follower animation to enlight the pages
-    new MouseFollower();
-    //light/dark mode
+
+new Axentix.Axentix('all');
+
+const initApp = async () => {
     new ThemeManager();
+    await Axentix.destroyAll();
+    new Axentix.Axentix('all');
+    if (!is_touch_device()) {
+        new MouseFollower();
 
-
+    } else {
+        document.querySelector('.overlay').style.display = 'none';
+    }
+};
+/*
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("content loaded");
+    initApp();
 });
+*/
+document.addEventListener('turbo:load', async () => {
+
+    console.log("turbo loaded");
+    await initApp();
+}); 

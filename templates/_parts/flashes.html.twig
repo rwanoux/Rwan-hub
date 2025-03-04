@@ -1,0 +1,8 @@
+<aside class="flashes">
+    {% for type, messages in app.flashes() %}
+    {% for message in messages %}
+    <div class="flash-message {{ type}}">{{message}}</div>
+    {% endfor %}
+    {% endfor %}
+
+</aside>

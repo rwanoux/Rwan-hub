@@ -1,49 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Rwanoux hub !
-{% endblock %}
-
 {% block body %}
-<main class="container">
+<main class="container-fluid">
 	<div class="main grid">
-
-		<section class="descriptif ">
-			<h2>Rwan est un gars qui fait ...</h2>
-			{% set strings = [
-			            '<b>💡 De la lumière 💡</b>',
-			            '🧑‍💻️ Du code 🧑‍💻️',
-			            '🎨 De la couleur 🎨',
-			            '🎲 Du jeu de rôle 🎲',
-			            '📚 De la lecture 📚',
-			        ] %}
-			<span
-				data-controller="symfony--ux-typed"
-				data-symfony--ux-typed-loop-value="true"
-				data-symfony--ux-typed-strings-value="{{ strings|json_encode|e('html_attr') }}"
-			> </span>
-			<a href="{{path('app_about')}}">mon parcour c'est ici</a>
-		</section>
 		<section class="hero">
-			<h3>Rwanoux Hub</h3>
-			<div class="grid hub">
-				<div class="foundry">
-					<a
-						href="https://rwanoux.freeboxos.fr/foundry"
-						data-tooltip="personnal Foundry Vtt server"
-					></a>
-				</div>
-				<div class="github">
-					<a
-						href="https://github.com/rwanoux"
-						data-tooltip="my github profile"
-					></a>
+			<div class="hero-content grid">
 
+				<div class="hero-text">
+					<h1>Bienvenue sur Rwan-Hub</h1>
+					<p>
+						À la croisée de la lumière et du code, découvrez le portfolio d'un éclairagiste devenu
+						développeur.
+						Ce hub présente mes projets, compétences et réalisations dans ces deux domaines passionnants.
+					</p>
 				</div>
-				<div class="projects">
-					<a
-						href="{{path('app_projects')}}"
-						data-tooltip="pool of ridiculous projects"
-					></a>
+				<div>
+
+
+					<div
+						class="caroulix"
+						id="example-caroulix"
+						data-ax="caroulix"
+						data-caroulix-autoplay-enabled="true"
+					>
+
+						<div class="caroulix-item">
+							<b>quand j'enclaire...</b>
+							<img
+								src="{{asset('img/console-tech.webp')}}"
+								alt="img1"
+							/>
+						</div>
+						<div class="caroulix-item">
+							<b>quand je dev...</b>
+							<img
+								src="{{asset('img/dev.webp')}}"
+								alt="img1"
+							/>
+						</div>
+						<div class="caroulix-item">
+							<b>quand je joue...</b>
+							<img
+								src="{{asset('img/GAME.webp')}}"
+								alt="img1"
+							/>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</section>

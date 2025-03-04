@@ -13,19 +13,57 @@
  */
 return [
     'app' => [
-        'path' => './assets/app.js',
-        'entrypoint' => true,
+        'path' => 'assets/app.js',
+        'entrypoint' => true
     ],
-    '@hotwired/stimulus' => [
-        'version' => '3.2.2',
+    'vis-timeline' => [
+        'version' => '7.7.3',
+    ],
+    'vis-data' => [
+        'version' => '7.1.9',
+    ],
+    'vis-timeline/dist/vis-timeline-graph2d.css' => [
+        'version' => '7.7.3',
+        'type' => 'css'
     ],
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
+    '@hotwired/stimulus' => [
+        'version' => '3.2.2',
+    ],
     '@hotwired/turbo' => [
-        'version' => '7.3.0',
+        'version' => '8.0.12',
     ],
     'typed.js' => [
         'version' => '2.1.0',
+    ],
+    'chart.js' => [
+        'version' => '4.4.1',
+    ],
+    '@kurkle/color' => [
+        'version' => '0.3.2',
+    ],
+    'date-fns' => [
+        'version' => '4.1.0',
+    ],
+    'axentix' => [
+        'version' => '2.4.1',
+    ],
+    'axentix/dist/axentix.min.css' => [
+        'version' => '2.4.1',
+        'type' => 'css',
+    ],
+    'vis-timeline' => [
+        'version' => '7.7.3',
+    ],
+    'moment' => [
+        'version' => '2.29.4',
+    ],
+    'vis-data/peer/esm/vis-data.js' => [
+        'version' => '7.1.9',
+    ],
+    'vis-data' => [
+        'version' => '7.1.9',
     ],
 ];

@@ -1,0 +1,27 @@
+{# filepath: /c:/Users/erwan/OneDrive/Documents/Rwan-hub/templates/lumiere/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<main class="container-fluid">
+    <div class="main grid">
+        <section class="hero lumiere">
+            <div
+                id="timeline"
+                data-timeline="{{ timelineData|e('html_attr') }}"
+            ></div>
+
+            <div class="employeurs-reguliers">
+                <h3>Employeurs réguliers</h3>
+                <ul class="grid">
+                    {% for employeur in employeurs %}
+                    <li>
+                        {{include('employeur/_card.html.twig', {'employeur': employeur})}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

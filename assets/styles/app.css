@@ -3,10 +3,6 @@
     --theme-transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body
-{
-    cursor: 🪄;
-}
 
 html[data-theme]
 {
@@ -18,6 +14,16 @@ html[data-theme] *
     transition: var(--theme-transition);
 }
 
+html body
+{
+    overflow-x: clip;
+
+    svg
+    {
+        min-width: 1.5rem !important;
+    }
+}
+
 h1,
 h2,
 h3
@@ -25,6 +31,7 @@ h3
     font-family: "Quattrocento", serif;
     font-weight: 700;
     font-style: normal;
+    border-bottom: 1px solid gray;
 }
 
 h4,
@@ -50,13 +57,22 @@ article
 
     p
     {
-        padding: 3rem;
+        padding: 1rem;
     }
+}
+
+body>header,
+body>main,
+body>footer
+{
+    max-width: 100%;
+
 }
 
 body>header
 {
-    box-shadow: 0 2rem 2rem rgba(255, 255, 255, 0.062);
+
+    box-shadow: 0 2rem 2rem rgba(255, 255, 255, 0.233);
 
     img
     {
@@ -64,12 +80,78 @@ body>header
         border-radius: 50%;
         filter: drop-shadow(0 0.5rem 1rem rgb(255, 255, 255));
     }
+
+    div.theme
+    {
+        margin-right: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        svg
+        {
+            min-width: 1rem
+        }
+    }
+
+    details
+    {
+
+        summary
+        {
+            font-style: 2rem;
+        }
+
+        summary::after
+        {
+            opacity: 0;
+        }
+
+
+
+        ul.pages
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            a
+            {
+                &:hover
+                {
+                    text-decoration: underline dotted;
+                }
+
+                &.active
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+
+    }
+
+
+
 }
+
+.grid
+{
+    padding: 1.5rem
+}
+
 
 body>footer
 {
 
-    box-shadow: 0 -2rem 2rem rgba(255, 255, 255, 0.062);
+
+    box-shadow: 0 -2rem 2rem rgba(255, 255, 255, 0.233);
+    max-height: 3rem;
+
+
+
 
     nav
     {
@@ -79,15 +161,13 @@ body>footer
         {
             width: 100%;
             display: flex;
-            justify-content: space-around;
-            border: 1px solid rgba(128, 128, 128, 0.295);
-            margin: 1rem;
+            justify-content: center;
 
             img
             {
                 border-radius: 50%;
                 filter: grayscale(1);
-                max-height: 3rem;
+                max-height: 2rem;
                 box-shadow: 0 0 0.5rem rgb(255, 255, 255);
                 transition: all 0.3s ease-in-out !important;
 
@@ -97,7 +177,24 @@ body>footer
                     filter: grayscale(0);
                 }
             }
+
+
+
+
         }
+    }
+}
+
+html[data-theme="light"]
+{
+    body>header
+    {
+        box-shadow: 0 2rem 2rem rgb(0 0 0 / 34%)
+    }
+
+    body>footer
+    {
+        box-shadow: 0 -2rem 2rem rgb(0 0 0 / 34%)
     }
 }
 
@@ -116,23 +213,147 @@ section.descriptif
 
 div.overlay
 {
+    overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100vw;
     height: 100%;
-    opacity: 0.85;
-    background-image: url('../img/background.jpg');
+    max-height: 100vh;
+    opacity: 0.65;
+    background-image: url(../img/background.webp);
     background-size: cover;
     background-color: #000;
     pointer-events: none;
     mix-blend-mode: hard-light;
+    box-sizing: border-box;
 
 
 }
 
+@keyframes shadowmoove
+{
+    0%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 0rem 0rem 30vw 3rem black inset;
+    }
+
+    5%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 2rem 2rem 30vw 3rem black inset;
+    }
+
+    10%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 4rem 4rem 30vw 3rem black inset;
+    }
+
+    15%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 5rem 5rem 30vw 3rem black inset;
+    }
+
+    20%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 4rem 4rem 30vw 3rem black inset;
+    }
+
+    25%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 2rem 2rem 30vw 3rem black inset;
+    }
+
+    30%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 0rem 0rem 30vw 3rem black inset;
+    }
+
+    35%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, -2rem -2rem 30vw 3rem black inset;
+    }
+
+    40%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, -4rem -4rem 30vw 3rem black inset;
+    }
+
+    45%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, -5rem -5rem 30vw 3rem black inset;
+    }
+
+    50%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, -4rem -4rem 30vw 3rem black inset;
+    }
+
+    55%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, -2rem -2rem 30vw 3rem black inset;
+    }
+
+    60%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 0rem 0rem 30vw 3rem black inset;
+    }
+
+    65%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 2rem 2rem 30vw 3rem black inset;
+    }
+
+    70%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 4rem 4rem 30vw 3rem black inset;
+    }
+
+    75%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 5rem 5rem 30vw 3rem black inset;
+    }
+
+    80%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 4rem 4rem 30vw 3rem black inset;
+    }
+
+    85%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 2rem 2rem 30vw 3rem black inset;
+    }
+
+    90%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 0rem 0rem 30vw 3rem black inset;
+    }
+
+    95%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, -2rem -2rem 30vw 3rem black inset;
+    }
+
+    100%
+    {
+        box-shadow: 0 0 20vw 3rem black, 0 0 100vw 10rem black, 0rem 0rem 30vw 3rem black inset;
+    }
+}
+
+
+.lighter:not([aria-busy=true])
+{
+    animation: shadowmoove 1s infinite alternate ease-in-out;
+    background-attachment: initial !important;
+    animation-duration: 12s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: infinite !important;
+}
+
+/* Déplacer ces styles en dehors de la media query et les mettre au niveau racine */
 .lighter
 {
+    animation: shadowmoove 1s infinite alternate ease-in-out;
     --lighter-size: max(150vw, 150vh);
     box-sizing: content-box;
     mix-blend-mode: hard-light;
@@ -144,21 +365,30 @@ div.overlay
     width: var(--lighter-size);
     height: var(--lighter-size);
     z-index: +1;
-    transition: box-shadow 0.3s ease-in-out, transform 0.1s linear !important;
+    transition: box-shadow 0.3sease-in-out, transform 0.1slinear !important;
+    filter: blur(1rem);
+}
 
-    filter: blur(3rem);
-
-    &.clicked
-    {
-        transition: box-shadow 0.1s ease-in-out !important;
-        box-shadow: 0 0 200vw 30vw black, 0 0 20vw 3rem black, 0 0 100vw 80vw black inset;
-    }
+.lighter.clicked
+{
+    width: 5vw;
+    height: 5vw;
+    transition: box-shadow 0.1sease-in-out !important;
+    box-shadow: 0 0 200vw 30vw black, 0 0 100vw 20rem black, 0 0 100vw 80vw black inset;
 }
 
 
+label[data-tooltip]
+{
+    border-bottom: none;
+}
+
 section.hero
 {
-
+    ul li
+    {
+        list-style: none;
+    }
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -166,18 +396,17 @@ section.hero
     {
 
         min-height: 15rem;
-        background-size: 100% auto;
+        background-color: gray;
+        background-size: auto 100%;
         background-position: center;
-        transition: all 1s ease-in-out, filter 5s ease-in-out !important;
-        box-shadow: 0px 40px 200px rgba(0, 0, 0, 1)inset;
-        filter: grayscale(0.8);
+        transition: filter 0.2s ease-in-out, background-size 0.3s ease-in-out !important;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+        filter: grayscale(0.9) contrast(1.2);
 
         &:hover
         {
-            background-size: 140% auto;
-            box-shadow: 0px 0px 0px rgba(0, 0, 0, 1)inset;
-            filter: grayscale(0);
-            transition: 0.4s ease-in-out !important;
+            background-size: auto 120%;
+            filter: grayscale(0) contrast(1);
         }
 
         a
@@ -189,28 +418,32 @@ section.hero
             text-align: center;
             align-content: center;
 
-
-
         }
 
 
 
         &.foundry
         {
-            background-image: url("https://i0.wp.com/restenford.com/wp-content/uploads/2020/06/foundrylogo.png");
+            background-image: url("../img/foundry.jpg");
         }
 
         &.github
         {
-            background-image: url("https://cdn.prod.website-files.com/669063260f1f9e9400934455/66b185a2069dd50a75c21e19_github-cover.jpg");
+            background-image: url("../img/github.jpg");
         }
 
-        &.projects
+        &.nextcloud
         {
-            background-image: url("../img/idea_18992682.gif");
+            background-image: url("../img/Nextcloud_Logo.svg.png");
+        }
+
+        &.youtube
+        {
+            background-image: url("../img/logo-youtube-png-transparent.webp");
         }
     }
 }
+
 
 p
 {
@@ -225,4 +458,166 @@ p::first-letter
 p::first-line
 {
     padding-left: 1rem !important;
+}
+
+section.lumiere
+{
+    padding-top: 1rem;
+
+    .grid>div
+    {
+        background-color: none;
+    }
+
+    h3
+    {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    li
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+
+        img
+        {
+            height: 5rem;
+            width: auto;
+            transition: height 0.3s ease-in-out !important;
+            justify-self: flex-start;
+
+
+        }
+    }
+}
+
+@keyframes flash
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    10%
+    {
+        opacity: 1;
+    }
+
+    90%
+    {
+        opacity: 1;
+    }
+
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+aside.flashes
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 1rem;
+    z-index: 2000;
+    pointer-events: none;
+
+
+
+    .flash-message
+    {
+        border: 1px solid gray;
+        animation: flash 5s ease-in-out;
+        transition: all 0.3s ease-in-out !important;
+        animation-duration: 3s !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 3 !important;
+        padding: 1rem 3rem;
+        border-radius: 0.3rem;
+        opacity: 0;
+
+        &.success
+        {
+            background-color: rgba(0, 128, 0, 0.466);
+        }
+
+        &.error
+        {
+            background-color: rgba(255, 0, 0, 0.555);
+        }
+
+        &.warning
+        {
+            background-color: rgba(255, 166, 0, 0.514);
+        }
+
+        &.notice
+        {
+            background-color: rgba(0, 0, 255, 0.445);
+        }
+    }
+}
+
+.chart-container
+{
+    --canvas-width: 100%;
+    --canvas-height: min(20rem, 50vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &>.canvas-container
+    {
+        height: var(--canvas-height);
+        width: var(--canvas-width);
+    }
+}
+
+.employeur-card
+{
+    position: relative;
+    min-width: 100%;
+
+    padding-right: 0;
+
+    transition: all 0.3s ease-in-out !important;
+
+    div.image
+    {
+        transition: all 0.3s ease-in-out !important;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.3;
+        pointer-events: none;
+        filter: grayscale(0.5);
+    }
+
+    &:hover
+    {
+        padding-right: 50%;
+
+        div.image
+        {
+            filter: grayscale(0);
+            width: 50%;
+            opacity: 1;
+            left: 50%
+        }
+    }
+
+
 }

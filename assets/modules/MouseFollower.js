@@ -9,11 +9,10 @@ export class MouseFollower {
         if (window.mouseFollowerInstance) {
             return window.mouseFollowerInstance;
         }
-
         this.lighter = document.querySelector('.lighter');
         this.mouse = { x: 0, y: 0 };
         this.current = { x: 0, y: 0, w: 100, h: 100 };
-        this.lerp = 0.5;
+        this.lerp = 0.05;
 
         this.bindEvents();
         this.animate();
@@ -24,15 +23,20 @@ export class MouseFollower {
     bindEvents() {
         if (is_touch_device()) {
             // Gestionnaire de mouvement de souris
-            document.addEventListener('pointermove', (e) => {
-                this.mouse.x = e.clientX;
-                this.mouse.y = e.clientY;
+            document.addEventListener('touchmove', (e) => {
+                this.mouse.x = e.touches[0].clientX;
+                this.mouse.y = e.touches[0].clientY;
             });
 
 
-            document.addEventListener('pointerdown', (e) => {
+            document.addEventListener('touchstart', (e) => {
+                this.mouse.x = e.touches[0].screenX;
+                this.mouse.y = e.touches[0].screenY;
                 this.handleClick(e);
             });
+
+
+
         } else {
             // Gestionnaire de mouvement de souris
             document.addEventListener('mousemove', (e) => {
@@ -57,15 +61,13 @@ export class MouseFollower {
     }
 
     handleClick(e) {
-
         if (this.lighter) {
-            console.log('Handling link click');
             this.lighter.classList.add('clicked');
 
             // Retirer la classe après l'animation
             setTimeout(() => {
                 this.lighter.classList.remove('clicked');
-            }, 400);
+            }, 200);
         }
     }
     animate() {
@@ -75,7 +77,6 @@ export class MouseFollower {
 
         // Application de la position        this.lighter.style.transform = `translate(${this.current.x}px, ${this.current.y}px)`;
         this.lighter.style.transform = `translate(${this.current.x}px, ${this.current.y}px)`;
-
 
         requestAnimationFrame(() => this.animate());
     }

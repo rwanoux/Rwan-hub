@@ -1,4 +1,8 @@
 import { Controller } from '@hotwired/stimulus';
+import { ThemeManager } from '../modules/ThemeManager.js';
+import { MouseFollower } from '../modules/MouseFollower.js';
+import * as Axentix from '../vendor/axentix/axentix.index.js';
+import { is_touch_device } from '../modules/mobileTouch.js';
 
 /*
  * This is an example Stimulus controller!
@@ -11,6 +15,7 @@ import { Controller } from '@hotwired/stimulus';
  */
 export default class extends Controller {
     connect() {
-        this.element.textContent = 'Hello Stimulus! Edit me in assets/controllers/hello_controller.js';
+        console.log('init !!!!!!!!!!!!!')
     }
+
 }
