@@ -14,7 +14,6 @@ import './styles/app.css';
 
 
 
-new Axentix.Axentix('all');
 
 const initApp = async () => {
     new ThemeManager();
@@ -36,9 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('turbo:load', async () => {
 
     console.log("turbo loaded");
-    await initApp();
-});
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log("content loaded");
     await initApp();
 });
