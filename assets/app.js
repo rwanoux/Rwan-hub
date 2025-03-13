@@ -37,4 +37,8 @@ document.addEventListener('turbo:load', async () => {
 
     console.log("turbo loaded");
     await initApp();
-}); 
+});
+document.addEventListener('DOMContentLoaded', async () => {
+    console.log("content loaded");
+    await initApp();
+});
