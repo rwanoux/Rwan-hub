@@ -519,6 +519,12 @@ section.lumiere
     }
 }
 
+#main-sidenav
+{
+    background-color: var(--pico-background-color);
+    color: var(--pico-color)
+}
+
 aside.flashes
 {
     display: flex;
