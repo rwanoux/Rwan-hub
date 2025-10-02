@@ -14,12 +14,10 @@ import './styles/app.css';
 
 
 
-new Axentix.Axentix('all');
 
 const initApp = async () => {
     new ThemeManager();
-    await Axentix.destroyAll();
-    new Axentix.Axentix('all');
+
     if (!is_touch_device()) {
         new MouseFollower();
 

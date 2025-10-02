@@ -1,55 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<main class="container-fluid">
-	<div class="main grid">
-		<section class="hero">
-			<div class="hero-content grid">
+	<main class="container-fluid">
+		<div class="main grid">
+			<section class="hero">
+				<div class="hero-content grid">
 
-				<div class="hero-text">
-					<h1>Bienvenue sur Rwan-Hub</h1>
-					<p>
-						À la croisée de la lumière et du code, découvrez le portfolio d'un éclairagiste devenu
-						développeur.
-						Ce hub présente mes projets, compétences et réalisations dans ces deux domaines passionnants.
-					</p>
-				</div>
-				<div>
+					<div class="hero-text">
+						<h1>Bienvenue sur Rwan-Hub</h1>
+						<p>
+							À la croisée de la lumière et du code, découvrez le portfolio d'un éclairagiste devenu
+																				développeur.
+																				Ce hub présente mes projets, compétences et réalisations dans ces deux domaines passionnants.
+						</p>
+					</div>
+					<div>
 
 
-					<div
-						class="caroulix"
-						id="example-caroulix"
-						data-ax="caroulix"
-						data-caroulix-autoplay-enabled="true"
-					>
+						<div class="caroulix" id="example-caroulix" data-caroulix-autoplay-enabled="true">
 
-						<div class="caroulix-item">
-							<h3>quand j'éclaire...</h3>
-							<img
-								src="{{asset('img/console-tech.webp')}}"
-								alt="img1"
-							/>
+							<div class="caroulix-item">
+								<h3>quand j'éclaire...</h3>
+								<img src="{{asset('img/console-tech.webp')}}" alt="img1"/>
+							</div>
+							<div class="caroulix-item">
+								<h3>quand je dev...</h3>
+								<img src="{{asset('img/dev.webp')}}" alt="img1"/>
+							</div>
+							<div class="caroulix-item">
+								<h3>quand je joue...</h3>
+								<img src="{{asset('img/GAME.webp')}}" alt="img1"/>
+							</div>
+
 						</div>
-						<div class="caroulix-item">
-							<h3>quand je dev...</h3>
-							<img
-								src="{{asset('img/dev.webp')}}"
-								alt="img1"
-							/>
-						</div>
-						<div class="caroulix-item">
-							<h3>quand je joue...</h3>
-							<img
-								src="{{asset('img/GAME.webp')}}"
-								alt="img1"
-							/>
-						</div>
-
 					</div>
 				</div>
-			</div>
-		</section>
-	</div>
-</main>
+			</section>
+		</div>
+	</main>
 {% endblock %}

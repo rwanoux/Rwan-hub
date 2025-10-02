@@ -2,50 +2,34 @@
 <html>
 
 	<head>
-		<meta
-			content="width=device-width, initial-scale=1"
-			name="viewport"
-		/>
+		<meta content="width=device-width, initial-scale=1" name="viewport"/>
 
 		<meta charset="UTF-8">
 		<title>
 			{% block title %}
-			{{ title }}
+				{{ title }}
 			{% endblock %}
 		</title>
 		<!-- Google Fonts -->
-		<link
-			rel="preconnect"
-			href="https://fonts.googleapis.com"
-		>
-		<link
-			rel="preconnect"
-			href="https://fonts.gstatic.com"
-			crossorigin
-		>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quattrocento:wght@400;700&display=swap"
-			rel="stylesheet"
-		>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
 		{% block stylesheets %}
-		<!-- Pico.css -->
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css"
-		>
+			<!-- Pico.css -->
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
 		{% endblock %}
 
 		{% block javascripts %}
 
-		<!--Asset Mapper importmap-->
-		{% block importmap %}
-		{{ importmap('app') }}
-		{% endblock %}
+			<!--Asset Mapper importmap-->
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
 
 		{% endblock %}
 	</head>
 
-	<body>
+	<body data-axentix>
 
 		<div class="debugger"></div>
 		{% include "_parts/flashes.html.twig" %}
