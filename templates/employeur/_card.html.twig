@@ -1,16 +1,17 @@
-<article class="employeur-card"><a
-        href="{{employeur.website}}"
-        target="_blank"
-    >
-        <header>
+<article class="employeur-card">
 
-            {{employeur.name}}
+	<header>
 
-        </header>
-        {{employeur.description |raw}}
-        <div
-            class="image"
-            style="background-image:url('images_upload/{{employeur.imageName}}')"
-        ></div>
-    </a>
+		<h2 class="d-inline-flex fx-row" id="employeurlink{{employeur.id}}" data-tooltip-position="left" data-tooltip="visiter {{employeur.website}}">
+
+
+			<a href="{{employeur.website}}" target="_blank">
+				<span>{{employeur.name}}{{ux_icon('tabler:external-link')}}</span>
+			</a>
+		</h2>
+
+	</header>
+	{{employeur.description |raw}}
+	<div class="image" style="background-image:url('images_upload/{{employeur.imageName}}')"></div>s
+
 </article>

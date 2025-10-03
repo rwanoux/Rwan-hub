@@ -591,10 +591,18 @@ aside.flashes
 {
     position: relative;
     min-width: 100%;
-
     padding-right: 0;
-
     transition: all 0.3s ease-in-out !important;
+
+    h2
+    {
+        cursor: pointer;
+
+        svg
+        {
+            max-width: 1rem;
+        }
+    }
 
     div.image
     {

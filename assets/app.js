@@ -15,28 +15,34 @@ import './styles/app.css';
 
 
 
-const initApp = async () => {
+const initApp = () => {
     new ThemeManager();
-
+    Axentix.destroyAll();
     if (!is_touch_device()) {
         new MouseFollower();
 
     } else {
         document.querySelector('.overlay').style.display = 'none';
     }
+    window.axentix = null;
+
+    // Ensure Sidenav can't trigger a duplicate-instance error, then init all components
+    const sidenavEl = document.querySelector('#main-sidenav');
+    if (sidenavEl) {
+        const existingSidenav = Axentix.getInstance(sidenavEl);
+        if (existingSidenav) {
+            existingSidenav.destroy();
+        }
+    }
+    new Axentix.Axentix('all');
+
 };
-/*
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("content loaded");
-    initApp();
-});
-*/
-document.addEventListener('turbo:load', async () => {
+document.addEventListener('turbo:load', () => {
 
     console.log("turbo loaded");
-    await initApp();
-});
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log("content loaded");
-    await initApp();
+    try {
+        initApp();
+    } catch (e) {
+        console.log(e);
+    }
 });
